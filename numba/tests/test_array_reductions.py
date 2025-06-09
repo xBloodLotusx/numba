@@ -301,6 +301,7 @@ class TestArrayReductions(MemoryLeakMixin, TestCase):
         self.check_reduction_basic(array_nanvar, prec='double')
 
     def check_median_basic(self, pyfunc, array_variations):
+        check(np.array([])
         cfunc = jit(nopython=True)(pyfunc)
         def check(arr):
             expected = pyfunc(arr)
